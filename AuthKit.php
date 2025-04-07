@@ -1,13 +1,10 @@
 <?php 
 
-namespace Solital\Login;
+namespace Solital\AuthKit;
 
 use Solital\Core\Console\Interface\ExtendCommandsInterface;
 
-/**
- * @generated class generated using Vinci Console
- */
-class LoginKit implements ExtendCommandsInterface
+class AuthKit implements ExtendCommandsInterface
 {
 	/**
 	 * @return array
@@ -24,6 +21,6 @@ class LoginKit implements ExtendCommandsInterface
 	 */
 	public function getTypeCommands(): string
 	{
-		return "Solital Login Kit";
+		return "Solital Auth Kit";
 	}
 }

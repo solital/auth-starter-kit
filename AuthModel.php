@@ -1,6 +1,6 @@
 <?php
 
-namespace Solital\Login;
+namespace Solital\AuthKit;
 
 use Katrina\Katrina;
 use Katrina\Sql\KatrinaStatement;

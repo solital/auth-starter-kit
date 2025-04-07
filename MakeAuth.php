@@ -1,6 +1,6 @@
 <?php
 
-namespace Solital\Login;
+namespace Solital\AuthKit;
 
 use Solital\Core\Console\Interface\CommandInterface;
 use Solital\Core\Console\Output\{ColorsEnum, ConsoleOutput};

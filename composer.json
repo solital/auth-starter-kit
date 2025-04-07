@@ -1,13 +1,16 @@
 {
-    "name": "solital/login",
+    "name": "solital/auth-starter-kit",
     "description": "Login template for Solital Framework",
+    "license": "MIT",
     "autoload": {
         "exclude-from-classmap": ["Templates/"],
         "psr-4": {
-            "Solital\\Login\\": ""
+            "Solital\\AuthKit\\": ""
         }
     },
     "require": {
-        "php": "^8.4"
+        "php": "^8.4",
+        "solital/vinci-console": "^4.5",
+        "solital/katrina": "^2.6"
     }
 }
