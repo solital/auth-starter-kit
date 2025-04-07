@@ -1,0 +1,13 @@
+{
+    "name": "solital/login",
+    "description": "Login template for Solital Framework",
+    "autoload": {
+        "exclude-from-classmap": ["Templates/"],
+        "psr-4": {
+            "Solital\\Login\\": ""
+        }
+    },
+    "require": {
+        "php": "^8.4"
+    }
+}
