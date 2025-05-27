@@ -120,6 +120,8 @@ class MakeAuth extends Command implements CommandInterface
     }
 
     /**
+     * Create a skeleton to login
+     * 
      * @param array $components
      *
      * @return MakeAuth
@@ -143,6 +145,8 @@ class MakeAuth extends Command implements CommandInterface
     }
 
     /**
+     * Create a skeleton to forgot password
+     * 
      * @param array $components
      *
      * @return MakeAuth
@@ -224,6 +228,8 @@ class MakeAuth extends Command implements CommandInterface
     }
 
     /**
+     * Create a default user in database
+     * 
      * @return MakeAuth
      */
     public function createUserAuth(): MakeAuth
@@ -285,6 +291,8 @@ class MakeAuth extends Command implements CommandInterface
     }
 
     /**
+     * Delete login or forgot password files
+     * 
      * @param array $components
      *
      * @return void
@@ -322,6 +330,8 @@ class MakeAuth extends Command implements CommandInterface
     }
 
     /**
+     * Set folders to login or forgot password
+     * 
      * @return void
      */
     private function getAuthFolders(): void

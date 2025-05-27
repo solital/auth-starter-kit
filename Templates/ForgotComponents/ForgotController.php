@@ -3,10 +3,10 @@
 namespace Solital\Components\Controller\Auth;
 
 use Solital\Core\Auth\Password;
-use Solital\Core\Http\Controller\Controller;
+use Solital\Core\Course\Http\Controller;
 use Solital\Core\Security\Hash;
 use Solital\Core\Wolf\Wolf;
-use Solital\Login\AuthModel;
+use Solital\AuthKit\AuthModel;
 
 class ForgotController extends Controller
 {
@@ -17,7 +17,7 @@ class ForgotController extends Controller
     {
         parent::__construct();
     }
-
+    
     /**
      * @return mixed
      */

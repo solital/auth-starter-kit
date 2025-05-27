@@ -3,10 +3,9 @@
 namespace Solital\Components\Controller\Auth;
 
 use Solital\Core\Auth\Auth;
-use Solital\Core\Course\Http\RouteRequest;
-use Solital\Core\Http\{Request, Controller\Controller};
+use Solital\Core\Course\Http\Controller;
 use Solital\Core\Security\Guardian;
-use Solital\Login\AuthModel;
+use Solital\AuthKit\AuthModel;
 
 class LoginController extends Controller
 {

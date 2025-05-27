@@ -21,6 +21,6 @@ class AuthKit implements ExtendCommandsInterface
 	 */
 	public function getTypeCommands(): string
 	{
-		return "Solital Auth Kit";
+		return "Solital Auth Starter Kit";
 	}
 }
