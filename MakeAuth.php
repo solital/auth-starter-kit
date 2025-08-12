@@ -7,7 +7,7 @@ use Solital\Core\Console\Output\{ColorsEnum, ConsoleOutput};
 use Solital\Core\Console\{Command, InputOutput};
 use Solital\Core\FileSystem\HandleFiles;
 use Solital\Core\Kernel\Console\HelpersTrait;
-use Solital\Core\Kernel\{DebugCore, ServiceLoader};
+use Solital\Core\Kernel\DebugCore;
 
 class MakeAuth extends Command implements CommandInterface
 {
@@ -67,11 +67,12 @@ class MakeAuth extends Command implements CommandInterface
     #[\Override]
     public function handle(object $arguments, object $options): mixed
     {
-        ServiceLoader::loadDatabaseDirectory();
+        app_get_database_connection();
+        
         $this->getAuthFolders();
-
         $handle_files = new HandleFiles();
-        $this->createUserAuth();
+
+        if (!isset($options->remove)) $this->createUserAuth();
 
         $templates_folder = __DIR__ . DIRECTORY_SEPARATOR . 'Templates'. DIRECTORY_SEPARATOR;
 
@@ -106,7 +107,8 @@ class MakeAuth extends Command implements CommandInterface
                     $this->controller_dir . 'ForgotController.php',
                     $this->route_dir . 'forgot-routers.php',
                     $this->view_dir . 'forgot-form.php',
-                    $this->view_dir . 'forgot-change-pass.php'
+                    $this->view_dir . 'forgot-change-pass.php',
+                    $this->view_dir . 'forgot-recovery-password.php'
                 ]);
 
                 return true;
@@ -176,8 +178,6 @@ class MakeAuth extends Command implements CommandInterface
     private function createHeaderAndFooter(): MakeAuth
     {
         $templates_folder = __DIR__ . DIRECTORY_SEPARATOR . 'Templates'. DIRECTORY_SEPARATOR;
-        /* $header_template = __DIR__ . DIRECTORY_SEPARATOR . 'header.php';
-        $footer_template = __DIR__ . DIRECTORY_SEPARATOR . 'footer.php'; */
 
         $this->createAuthComponents(
             $this->view_dir,

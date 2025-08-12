@@ -48,15 +48,15 @@ class ForgotController extends Controller
         );
 
         $wolf = new Wolf;
-        $wolf->setArgs(['link' => $generated_link]);
-        $wolf->setView('auth.template-recovery-password');
+        $wolf->setArgs([
+            'subject' => 'User',
+            'name_recipient' => 'User',
+            'link' => $generated_link
+        ]);
+        $wolf->setView('auth.forgot-recovery-password');
         $template = $wolf->render();
 
-        $link_send = Password::sendGeneratedLinkTo(
-            'solital@email.com',
-            'User',
-            $template
-        );
+        $link_send = Password::sendGeneratedLinkTo($email, 'User', $template);
 
         ($link_send == true)
             ? message()->new('forgot', 'Link sent to your email!')
@@ -85,7 +85,7 @@ class ForgotController extends Controller
             ]);
         }
 
-        message('login', 'The informed link has already expired!');
+        message()->new('login', 'The informed link has already expired or is not valid!');
         response()->redirect(url('auth'));
     }
 
@@ -97,8 +97,8 @@ class ForgotController extends Controller
     public function changePost($hash): void
     {
         $result = Hash::decrypt($hash)->isValid();
-        if ($result == false)
-            response()->redirect(url('auth'));
+
+        if ($result == false) response()->redirect(url('auth'));
 
         $pass = $this->getRequestParams()->post('inputPass')->getValue();
         $confPass = $this->getRequestParams()->post('inputConfPass')->getValue();

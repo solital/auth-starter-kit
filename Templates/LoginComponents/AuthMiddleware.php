@@ -3,7 +3,7 @@
 namespace Solital\Middleware;
 
 use Solital\Core\Auth\Auth;
-use Solital\Core\Http\Middleware\BaseMiddlewareInterface;
+use Solital\Core\Course\Middleware\BaseMiddlewareInterface;
 
 class AuthMiddleware implements BaseMiddlewareInterface
 {

@@ -3,8 +3,8 @@
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>{{ subject }}</title>
-    <meta name="description" content="{{ subject }}.">
+    <title>{{ $subject }}</title>
+    <meta name="description" content="{{ $subject }}.">
     <style type="text/css">
         a:hover {
             text-decoration: underline !important;
@@ -36,10 +36,10 @@
                                             requested to reset your password</h1>
                                         <span style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
                                         <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                                            Hello {{ name_recipient }}, to reset your password, click the
+                                            Hello {{ $name_recipient }}, to reset your password, click the
                                             following link.
                                         </p>
-                                        <a href="{{ link }}" style="background:#1E90FF;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Reset
+                                        <a href="{{ $link }}" style="background:#1E90FF;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Reset
                                             Password</a>
                                     </td>
                                 </tr>
